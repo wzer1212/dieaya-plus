@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="دعاية بلس">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1a73e8">
+
+  <title>دعاية بلس</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      color: #666;
+    }
+  </style>
+
+  <script>
+    // Debugging console for errors
+    window.flutterErrors = [];
+    window.addEventListener('error', function(e) {
+      window.flutterErrors.push({
+        type: 'error',
+        message: e.message,
+        source: e.filename,
+        lineno: e.lineno,
+        colno: e.colno,
+        stack: e.error?.stack || ''
+      });
+      console.error('[Flutter Bootstrap Error]', e);
+    });
+
+    window.addEventListener('unhandledrejection', function(e) {
+      window.flutterErrors.push({
+        type: 'unhandledRejection',
+        reason: e.reason,
+        promise: e.promise
+      });
+      console.error('[Flutter Bootstrap Unhandled Promise]', e);
+    });
+
+    console.log('[Flutter Bootstrap] Starting initialization...');
+    console.log('[Flutter Bootstrap] Base href:', document.baseURI);
+    console.log('[Flutter Bootstrap] Script loading...');
+  </script>
+
+  <script src="flutter_bootstrap.js" async></script>
+</head>
+
+<body>
+  <div id="loading">جاري تحميل التطبيق...</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('[Flutter Bootstrap] DOM Content Loaded');
+    });
+
+    window.addEventListener('load', function() {
+      console.log('[Flutter Bootstrap] Window Load Complete');
+      // Remove loading screen after a delay if Flutter hasn't taken over
+      setTimeout(function() {
+        const loading = document.getElementById('loading');
+        if (loading && loading.style.display !== 'none') {
+          console.warn('[Flutter Bootstrap] App not loaded after 5 seconds');
+        }
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

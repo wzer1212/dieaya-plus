@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "843945680710",
+    "project_id": "dieayap-793dd",
+    "storage_bucket": "dieayap-793dd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843945680710:android:f6551df9ece104516c4f47",
+        "android_client_info": {
+          "package_name": "com.dieayaplus.market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuoMUwDdng1rRJ3FUzijRJwjSXBT7zUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843945680710:android:8dc45e527b71c66a6c4f47",
+        "android_client_info": {
+          "package_name": "com.dieayaplus.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuoMUwDdng1rRJ3FUzijRJwjSXBT7zUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843945680710:android:cf6b8180357a18d26c4f47",
+        "android_client_info": {
+          "package_name": "com.dieayaplus.user.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuoMUwDdng1rRJ3FUzijRJwjSXBT7zUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843945680710:android:05d89c030fc810046c4f47",
+        "android_client_info": {
+          "package_name": "com.example.dieaya_market"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuoMUwDdng1rRJ3FUzijRJwjSXBT7zUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843945680710:android:b1c7dd041b9a35626c4f47",
+        "android_client_info": {
+          "package_name": "com.user.dieayaplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCuoMUwDdng1rRJ3FUzijRJwjSXBT7zUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

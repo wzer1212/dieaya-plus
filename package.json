@@ -1,0 +1,29 @@
+{
+  "name": "dieayapluscustomer",
+  "version": "1.0.0",
+  "description": "Dieaya User",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/digital01agency1/dieayapluscustomer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/digital01agency1/dieayapluscustomer/issues"
+  },
+  "homepage": "https://gitlab.com/digital01agency1/dieayapluscustomer#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
+
+

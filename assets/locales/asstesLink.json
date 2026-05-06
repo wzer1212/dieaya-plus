@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "com.dieayaplus.user",
+      "package_name": "com.dieayaplus.user",
+      "sha256_cert_fingerprints": [
+        "05:9E:1E:22:22:5B:B6:AB:32:D0:49:D2:A8:FD:44:B2:DD:2E:BA:EE:76:96:8E:D1:4A:7A:66:B1:5C:2D:D5:80"
+      ]
+    }
+  }
+]
