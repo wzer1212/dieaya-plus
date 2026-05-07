@@ -459,13 +459,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
 
   },
-),
+},
 
-await launchUrl(
-  url,
-  mode: LaunchMode.externalApplication,
-);
-                          ),
+
+                          )
                           if (isLoggedIn)
                             _buildMenuItem(
                               iconPath: 'assets/svg/profile/Delete 2.svg',
