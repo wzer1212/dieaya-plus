@@ -448,21 +448,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
   iconPath: 'assets/svg/profile/User Tag.svg',
   label: 'app_name'.tr,
   onTap: () async {
-
     final Uri url = Uri.parse(
-      'https://site.tcore.site/business',
+      'https://site.tcore.site/businessapp',
     );
 
     await launchUrl(
       url,
       mode: LaunchMode.externalApplication,
     );
-
   },
-},
+),
 
-
-                          )
                           if (isLoggedIn)
                             _buildMenuItem(
                               iconPath: 'assets/svg/profile/Delete 2.svg',
