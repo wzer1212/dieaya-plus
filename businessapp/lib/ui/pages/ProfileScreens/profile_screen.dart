@@ -445,13 +445,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 },
                               )),
                           _buildMenuItem(
-                            iconPath: 'assets/svg/profile/User Tag.svg',
-                            label: 'app_name'.tr,
-                            onTap: () async {
-                              openAppInPlayStore(Platform.isIOS
-                                  ? 'https://apps.apple.com/eg/app/%D8%AF%D8%B9%D8%A7%D9%8A%D8%A9-%D8%A8%D9%84%D8%B3-%D8%A7%D9%84%D8%AA%D8%A7%D8%AC%D8%B1/id6633412575'
-                                  : 'https://play.google.com/store/apps/details?id=com.dieayaplus.user');
-                            },
+  iconPath: 'assets/svg/profile/User Tag.svg',
+  label: 'app_name'.tr,
+  onTap: () async {
+
+    final Uri url = Uri.parse(
+      'https://site.tcore.site/business',
+    );
+
+    await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    );
+
+  },
+),
+
+await launchUrl(
+  url,
+  mode: LaunchMode.externalApplication,
+);
                           ),
                           if (isLoggedIn)
                             _buildMenuItem(
