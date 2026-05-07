@@ -1,3 +1,5 @@
+import 'dart:html' as html;
+
 import 'package:dieaya_user/UI/pages/HomeScreen/home_screen.dart';
 import 'package:dieaya_user/UI/pages/ProfileScreen/profile_screen.dart';
 import 'package:dieaya_user/UI/pages/StoresScreen/see_all_market.dart';
@@ -110,7 +112,10 @@ class GlobalWebHeader extends StatelessWidget {
               // business
               AnimatedWebHeaderButton(
                 title: 'business'.tr,
-                onTap: () {},
+                onTap: () {
+                  // Navigate to business app on the same domain
+                  html.window.location.href = '/businessapp';
+                },
               ),
               SizedBox(width: 15.w),
               // download_app
