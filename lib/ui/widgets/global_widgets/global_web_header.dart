@@ -41,9 +41,28 @@ class GlobalWebHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = themeController.themeMode.value == ThemeMode.dark;
 
+    // تحسين الارتفاع والتباعد حسب نوع الجهاز
+    final headerHeight = ResponsiveService.isDesktop()
+        ? 60.h
+        : ResponsiveService.isTablet()
+            ? 55.h
+            : 50.h;
+
+    final horizontalPadding = ResponsiveService.isDesktop()
+        ? 20.w
+        : ResponsiveService.isTablet()
+            ? 15.w
+            : 10.w;
+
+    final buttonSpacing = ResponsiveService.isDesktop()
+        ? 20.w
+        : ResponsiveService.isTablet()
+            ? 15.w
+            : 10.w;
+
     return Container(
-      height: 50.h,
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+      height: headerHeight,
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 5.h),
       decoration: BoxDecoration(color: AppColors.primary),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -70,7 +89,7 @@ class GlobalWebHeader extends StatelessWidget {
                   Get.to(() => HomeScreen());
                 },
               ),
-              SizedBox(width: 15.w),
+              SizedBox(width: buttonSpacing),
               // dropdown menu
               ShowDropDown(
                 items: [
@@ -108,7 +127,7 @@ class GlobalWebHeader extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(width: 15.w),
+              SizedBox(width: buttonSpacing),
               // business
               AnimatedWebHeaderButton(
                 title: 'business'.tr,
@@ -117,7 +136,7 @@ class GlobalWebHeader extends StatelessWidget {
                   html.window.location.href = '/businessapp';
                 },
               ),
-              SizedBox(width: 15.w),
+              SizedBox(width: buttonSpacing),
               // download_app
               AnimatedWebHeaderButton(
                 title: 'download_app'.tr,
@@ -133,7 +152,7 @@ class GlobalWebHeader extends StatelessWidget {
                   ;
                 },
               ),
-              SizedBox(width: 15.w),
+              SizedBox(width: buttonSpacing),
             ],
           ),
           Row(

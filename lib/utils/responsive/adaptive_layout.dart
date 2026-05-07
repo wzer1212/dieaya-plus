@@ -13,28 +13,40 @@ class AdaptiveLayOut extends StatelessWidget {
   final Widget? tablet;
   final Widget desktop;
 
+  // تحسين الكشف عن الأجهزة للكمبيوتر والأيباد والجوال
   static bool isMobile(BuildContext context) =>
-      1.fullWidth < 800;
+      MediaQuery.of(context).size.width < 600;
 
   static bool isTablet(BuildContext context) =>
-      1.fullWidth>= 650 &&
-          1.fullWidth < 1200;
+      MediaQuery.of(context).size.width >= 600 &&
+      MediaQuery.of(context).size.width < 1024;
 
-  static bool isDesktop() =>
-      1.fullWidth >= 1200;
+  static bool isDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1024;
+
+  // إضافة كشف للأجهزة الصغيرة جداً (مثل الهواتف الصغيرة)
+  static bool isSmallMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 360;
+
+  // إضافة كشف للأجهزة الكبيرة (مثل الأيباد برو والكمبيوتر الكبير)
+  static bool isLargeTablet(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 800 &&
+      MediaQuery.of(context).size.width < 1024;
+
+  static bool isLargeDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1440;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth >= 1024) {
-          return desktop;
-        } else if (constraints.maxWidth >= 800 && constraints.maxWidth <= 1023) {
-          return tablet ?? mobile;
-        } else {
-          return mobile;
-        }
-      },
-    );
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    // تحسين المنطق للكشف عن الأجهزة
+    if (screenWidth >= 1024) {
+      return desktop;
+    } else if (screenWidth >= 600 && screenWidth < 1024) {
+      return tablet ?? mobile;
+    } else {
+      return mobile;
+    }
   }
 }

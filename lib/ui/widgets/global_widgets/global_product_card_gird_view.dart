@@ -39,13 +39,23 @@ class GlobalProductCardGrid extends StatelessWidget {
     Get.put(ThemeController()); // Access ThemeController
     bool isDark = themeController.themeMode.value == ThemeMode.dark;
 
-    final screenWidth = MediaQuery.of(context).size.width;
-    final cardWidth = screenWidth * 0.45;
+    // استخدام المقاسات المحسنة من ResponsiveService
+    final cardWidth = ResponsiveService.getCardWidth(context);
+    final cardHeight = ResponsiveService.getCardHeight(context);
+    final imageHeight = imageHeight ?? cardHeight * 0.6;
 
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        constraints: BoxConstraints(),
+        width: cardWidth,
+        constraints: BoxConstraints(
+          minHeight: cardHeight,
+          maxHeight: cardHeight + 50, // مرونة إضافية
+        ),
+        margin: EdgeInsets.symmetric(
+          horizontal: ResponsiveService.isMobile() ? 8.w : 12.w,
+          vertical: 8.h,
+        ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: isDark
@@ -58,6 +68,13 @@ class GlobalProductCardGrid extends StatelessWidget {
             topRight: Radius.circular(15),
             topLeft: Radius.circular(15),
           ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
         ),
         padding: const EdgeInsets.all(1.5),
         child: Container(
